@@ -34,6 +34,16 @@ spec:
               value: "http://34.116.141.50.nip.io/login/oauth2/code/google"
             - name: FRONTEND_URL
               value: "http://34.116.141.50.nip.io"
+            - name: GOOGLE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: oauth-google-secrets
+                  key: client-id
+            - name: GOOGLE_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: oauth-google-secrets
+                  key: client-secret
 ---
 apiVersion: v1
 kind: Service
